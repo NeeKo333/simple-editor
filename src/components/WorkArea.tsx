@@ -15,15 +15,17 @@ const WorkArea: React.FC<IWorkArea> = ({
       onDragLeave={(e) => onDragLeaveHandler(e)}
       onDragOver={(e) => onDragOverHandler(e)}
     >
-      {boardContent.length > 0
-        ? boardContent.map((el, index) =>
-            el.cardName === SidebarElements.Text ? (
-              <textarea key={el.id} className="textarea-item"></textarea>
-            ) : (
-              <Image key={el.id}></Image>
-            )
+      {boardContent.length > 0 ? (
+        boardContent.map((el, index) =>
+          el.cardName === SidebarElements.Text ? (
+            <textarea key={el.id} className="textarea-item"></textarea>
+          ) : (
+            <Image key={el.id}></Image>
           )
-        : "drag"}
+        )
+      ) : (
+        <h1>Drag something</h1>
+      )}
     </div>
   );
 };

@@ -29,15 +29,17 @@ const Image = () => {
         </div>
       ) : (
         <>
-          <label htmlFor={id} className="upload-img-label"></label>
+          <label htmlFor={id} className="upload-img-label">
+            Upload Image
+          </label>
           <input
+            className="image-input"
             id={id}
             onChange={(e) => {
               readFile(e);
             }}
             type="file"
             accept=".jpg, .jpeg, .png"
-            style={{ display: "none" }}
           ></input>
         </>
       )}

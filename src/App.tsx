@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import Sidebar from "./components/Sidebar";
 import WorkArea from "./components/WorkArea";
 import { ICard } from "./types/ICard";
@@ -10,6 +10,12 @@ function App() {
 
   const onDropHandler = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
+
+    const board = e.target as HTMLDivElement;
+    if (board.className === "work-area") {
+      board.style.backgroundColor = "rgba(129, 163, 196)";
+    }
+
     setBoardContent([...boardContent, currentCard]);
   };
 
@@ -26,15 +32,16 @@ function App() {
   };
 
   const onDragLeaveHandler = (e: React.DragEvent<HTMLDivElement>) => {
-    const element = e.target as HTMLDivElement;
-    element.style.boxShadow = "";
+    const board = e.target as HTMLDivElement;
+    board.style.backgroundColor = "rgba(129, 163, 196)";
   };
 
   const onDragOverHandler = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
-    const element = e.target as HTMLDivElement;
-    if (element.className === "work-area") {
-      element.style.boxShadow = "0px 2px 3px grey";
+
+    const board = e.target as HTMLDivElement;
+    if (board.className === "work-area") {
+      board.style.backgroundColor = "rgba(129, 163, 196, 0.8)";
     }
   };
 
