@@ -6,7 +6,7 @@ const Image = () => {
 
   const id: string = useMemo(() => uuidv4(), []);
 
-  function readFile(e: React.ChangeEvent): void {
+  const readFile = (e: React.ChangeEvent): void => {
     const input = e.target as HTMLInputElement;
 
     const Freader = new FileReader();
@@ -19,7 +19,7 @@ const Image = () => {
       const imgSrc = e.target?.result as string;
       setPicture(imgSrc);
     };
-  }
+  };
 
   return (
     <div>

@@ -1,12 +1,12 @@
 import React from "react";
 import { ISidebar } from "../types/ISidebar";
-import { SidebarElements } from "../types/consts";
+import { ElementType } from "../types/ElementType";
 
 const Sidebar: React.FC<ISidebar> = ({
   onDragStartHandler,
   onDragEndHandler,
 }) => {
-  const itemList: string[] = [SidebarElements.Text, SidebarElements.Image];
+  const itemList: string[] = [ElementType.Text, ElementType.Image];
   return (
     <div className="sidebar">
       {itemList.map((el) => (

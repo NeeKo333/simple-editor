@@ -1,6 +1,6 @@
 import Image from "./Image";
 import { IWorkArea } from "../types/IWorkArea";
-import { SidebarElements } from "../types/consts";
+import { ElementType } from "../types/ElementType";
 
 const WorkArea: React.FC<IWorkArea> = ({
   boardContent,
@@ -16,8 +16,8 @@ const WorkArea: React.FC<IWorkArea> = ({
       onDragOver={(e) => onDragOverHandler(e)}
     >
       {boardContent.length > 0 ? (
-        boardContent.map((el, index) =>
-          el.cardName === SidebarElements.Text ? (
+        boardContent.map((el) =>
+          el.cardName === ElementType.Text ? (
             <textarea key={el.id} className="textarea-item"></textarea>
           ) : (
             <Image key={el.id}></Image>

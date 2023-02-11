@@ -1,4 +1,4 @@
-export enum SidebarElements {
+export enum ElementType {
   Text = "Text",
   Image = "Image",
 }
