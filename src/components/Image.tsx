@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-const Image = () => {
+const Image = React.memo(() => {
   const [picture, setPicture] = useState<string>("");
 
   const id: string = useMemo(() => uuidv4(), []);
@@ -45,6 +45,6 @@ const Image = () => {
       )}
     </div>
   );
-};
+});
 
 export default Image;
